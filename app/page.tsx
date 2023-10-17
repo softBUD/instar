@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { Open_Sans } from "next/font/google";
+import Image from 'next/image';
+import { Open_Sans } from 'next/font/google';
 
-const OpenSans = Open_Sans({ subsets: ["latin"] });
+const OpenSans = Open_Sans({ subsets: ['latin'] });
 
 export default function Home() {
-  return <h1 className="text-gray-400">instargram</h1>;
+  return <h1 className='text-gray-400'>instargram</h1>;
 }
