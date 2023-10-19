@@ -10,10 +10,12 @@ import NewIcon from './ui/icons/NewIcon';
 import { usePathname } from 'next/navigation';
 import ColorButton from './ui/ColorButton';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import Avartar from './Avartar';
 
 function Navbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
+  const user = session?.user;
 
   const menu = [
     {
@@ -47,7 +49,13 @@ function Navbar() {
               </Link>
             </li>
           ))}
-
+          <li>
+            {user && (
+              <Link href={`/user/${user.username}`}>
+                <Avartar image={user.image} />
+              </Link>
+            )}
+          </li>
           {session ? (
             <ColorButton
               text='Sign out'
