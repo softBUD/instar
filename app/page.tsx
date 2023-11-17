@@ -1,8 +1,27 @@
 import Image from 'next/image';
 import { Open_Sans } from 'next/font/google';
+import FollowingBar from '@/components/FollowingBar';
+import PostList from '@/components/PostList';
+import SideBar from '@/components/SideBar';
+import { getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]/route';
+import { redirect } from 'next/navigation';
 
 const OpenSans = Open_Sans({ subsets: ['latin'] });
 
-export default function Home() {
-  return <h1 className='text-gray-400'>instargram</h1>;
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  const user = session?.user;
+
+  if (!user) {
+    redirect('/auth/signin');
+  }
+
+  return (
+    <section>
+      <FollowingBar />
+      <PostList />
+      <SideBar user={user} />
+    </section>
+  );
 }
