@@ -10,14 +10,20 @@ function SideBar({ user }: Props) {
   const { name, username, image } = user;
   return (
     <>
-      <div>{image && <Avartar image={image} />}</div>
-      <p>{username}</p>
-      <p>{name}</p>
-      <p>
+      <div className='flex items-center'>
+        {image && <Avartar image={image} />}
+      </div>
+      <div className='ml-4'>
+        <p className='font-bold'>{username}</p>
+        <p className='text-lg text-neutral-500 leading-4'>{name}</p>
+      </div>
+      <p className='text-sm text-neutral-500 mt-8'>
         About · Help · Press · API · Jobs · Privacy · Terms · Location ·
         Language
       </p>
-      <p>@Copyright PETSTARGRAM from softBUD</p>
+      <p className='font-bold text-sm mt-8 text-neutral-500'>
+        @Copyright PETSTARGRAM from softBUD
+      </p>
     </>
   );
 }
