@@ -10,13 +10,14 @@ function SideBar({ user }: Props) {
   const { name, username, image } = user;
   return (
     <>
-      <div className='flex items-center'>
+      <div className='flex items-center mt-4'>
         {image && <Avartar image={image} />}
+        <div className='ml-4'>
+          <p className='font-bold'>{username}</p>
+          <p className='text-lg text-neutral-500 leading-4'>{name}</p>
+        </div>
       </div>
-      <div className='ml-4'>
-        <p className='font-bold'>{username}</p>
-        <p className='text-lg text-neutral-500 leading-4'>{name}</p>
-      </div>
+
       <p className='text-sm text-neutral-500 mt-8'>
         About · Help · Press · API · Jobs · Privacy · Terms · Location ·
         Language

@@ -21,13 +21,17 @@ export default function Avartar({
   }
 
   function getImageSizeStyle(size: string): string {
-    return size === 'small' ? 'w-[34px] h-[34px]' : 'w-16 h-16';
+    return size === 'small'
+      ? 'w-[34px] h-[34px] p-[0.1rem]'
+      : 'w-16 h-16 p-[0.2rem]';
   }
 
   return (
     <div className={getContainerStyle(size, highlight)}>
       <img
-        className='bg-white rounded-full w-[40px] h-[40px]'
+        className={`bg-white rounded-full p-[0.1rem] ${getImageSizeStyle(
+          size
+        )}`}
         alt='userImage'
         src={image ?? undefined}
         referrerPolicy='no-referrer'

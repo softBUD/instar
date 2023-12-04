@@ -52,7 +52,11 @@ function Navbar() {
           <li>
             {user && (
               <Link href={`/user/${user.username}`}>
-                <Avartar image={user.image} />
+                <Avartar
+                  image={user.image}
+                  size='small'
+                  highlight
+                />
               </Link>
             )}
           </li>
