@@ -23,7 +23,7 @@ export default function Avartar({
   function getImageSizeStyle(size: string): string {
     return size === 'small'
       ? 'w-[34px] h-[34px] p-[0.1rem]'
-      : 'w-16 h-16 p-[0.2rem]';
+      : 'w-16 h-16 p-[0.1rem]';
   }
 
   return (

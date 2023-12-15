@@ -12,7 +12,6 @@ const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async signIn({ user: { id, name, image, email } }) {
-      console.log({ id, name, image, email });
       if (!email) {
         return false;
       }
