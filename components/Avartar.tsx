@@ -12,11 +12,11 @@ export default function Avartar({
   highlight = false,
 }: Props) {
   function getContainerStyle(size: string, highlight: boolean): string {
-    const base = 'rounded-full flex justify-center items-center';
+    const base = 'rounded-full flex justify-center items-center text-center';
     const highlightStyle = highlight
       ? 'bg-gradient-to-bl from-fuchsia-600 via-rose-500 to-amber-300'
       : '';
-    const sizeStyle = size === 'small' ? 'w-9 h-9' : 'w-[68px] h-[68px]';
+    const sizeStyle = size === 'small' ? 'w-9 h-9' : 'w-[67px] h-[67px]';
     return `${base} ${highlightStyle} ${sizeStyle}`;
   }
 
@@ -29,7 +29,7 @@ export default function Avartar({
   return (
     <div className={getContainerStyle(size, highlight)}>
       <img
-        className={`bg-white rounded-full p-[0.1rem] ${getImageSizeStyle(
+        className={`bg-white object-cover rounded-full p-[0.1rem] ${getImageSizeStyle(
           size
         )}`}
         alt='userImage'
